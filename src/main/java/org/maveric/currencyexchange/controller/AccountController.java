@@ -14,7 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/account")
 @SecurityRequirement(name = "bearerAuth")
-
+@CrossOrigin(origins = "${corsAllowedOrigin}")
 public class AccountController {
     private IAccountService accountService;
 
@@ -37,7 +37,7 @@ public class AccountController {
                 .body(accountService.updateAccount(customerId, accountNumber, accountRequest));
     }
 
-    @GetMapping(value = "/fetchALL/{customerId}")
+    @GetMapping(value = "/fetchAll/{customerId}")
     public ResponseEntity<List<AccountResponse>> findAllAccounts(@PathVariable long customerId) {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(accountService.findAllAccounts(customerId));

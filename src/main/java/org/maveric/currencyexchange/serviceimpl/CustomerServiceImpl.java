@@ -13,6 +13,8 @@ import org.maveric.currencyexchange.service.ICustomerService;
 import org.modelmapper.ModelMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -60,7 +62,7 @@ public class CustomerServiceImpl implements ICustomerService {
     @Transactional
     @Override
     public CustomerResponse updateCustomer(long customerId, CustomerRequest customerRequest) {
-        Customer customer = verifyCustomer(customerId);
+        Customer customer = verifyCustomer();
         mapper.map(customerRequest, customer);
         updateDobAndAge(customer, customerRequest.getDob());
         return mapper.map(customer, CustomerResponse.class);
@@ -77,19 +79,21 @@ public class CustomerServiceImpl implements ICustomerService {
     @Override
     @Transactional
     public String deleteCustomer(long customerId) {
-        Customer customer = verifyCustomer(customerId);
+        Customer customer = verifyCustomer();
         customerRepo.delete(customer);
         return "Customer Deleted Successfully";
     }
 
     @Override
     public CustomerResponse findCustomer(long customerId) {
-        Customer customer = verifyCustomer(customerId);
+        Customer customer = verifyCustomer();
         return mapper.map(customer, CustomerResponse.class);
     }
 
-    public Customer verifyCustomer(long customerId) {
-        return customerRepo.findById(customerId).orElseThrow(CustomerNotFoundException::new);
+    private Customer verifyCustomer() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        String email = authentication.getName();
+        return customerRepo.findByEmail(email).orElseThrow(CustomerNotFoundException::new);
     }
 
     private void updateDobAndAge(Customer customer, LocalDate dob) {

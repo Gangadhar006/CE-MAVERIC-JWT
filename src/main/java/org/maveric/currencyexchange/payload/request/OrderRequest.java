@@ -12,8 +12,10 @@ import org.maveric.currencyexchange.payload.response.CustomerResponse;
 public class OrderRequest {
     @NotBlank(message = "Source account can't be Blank")
     private String srcAccount;
+
     @NotBlank(message = "Destination account can't be Blank")
     private String destAccount;
+
     @Positive(message = "Amount must be a positive number and Not Blank")
     private double amount;
 }

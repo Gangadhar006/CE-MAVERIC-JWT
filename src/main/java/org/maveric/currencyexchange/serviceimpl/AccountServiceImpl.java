@@ -37,7 +37,7 @@ public class AccountServiceImpl implements IAccountService {
     @Override
     @Transactional
     public AccountResponse createAccount(long customerId, AccountRequest accountRequest) {
-        Customer customer = verfiyCustomer(customerId);
+        Customer customer = verifyCustomer(customerId);
         Account account = mapper.map(accountRequest, Account.class);
         account.setCustomer(customer);
         account = accountRepo.save(account);
@@ -50,7 +50,7 @@ public class AccountServiceImpl implements IAccountService {
     @Override
     @Transactional
     public AccountResponse updateAccount(long customerId, String accountNumber, AccountRequest accountRequest) {
-        verfiyCustomer(customerId);
+        verifyCustomer(customerId);
         return updateAccountUtil(customerId, accountNumber, accountRequest);
     }
 
@@ -72,7 +72,7 @@ public class AccountServiceImpl implements IAccountService {
 
     @Override
     public List<AccountResponse> findAllAccounts(long customerId) {
-        Customer customer = verfiyCustomer(customerId);
+        Customer customer = verifyCustomer(customerId);
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String email = authentication.getName();
         Customer authenticatedCustomer = customerRepo.findByEmail(email).orElseThrow(CustomerNotFoundException::new);
@@ -101,7 +101,7 @@ public class AccountServiceImpl implements IAccountService {
         return account;
     }
 
-    public Customer verfiyCustomer(long customerId) {
+    public Customer verifyCustomer(long customerId) {
         return customerRepo.findById(customerId).orElseThrow(CustomerNotFoundException::new);
     }
 }

@@ -8,13 +8,12 @@ import org.maveric.currencyexchange.service.ICustomerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
 @RequestMapping(value = "/customer")
 @SecurityRequirement(name = "bearerAuth")
-
+@CrossOrigin(origins = "${corsAllowedOrigin}")
 public class CustomerController {
 
     private ICustomerService customerService;
