@@ -1,4 +1,4 @@
-package org.maveric.currencyexchange.service;
+package org.maveric.currencyexchange.serviceimpl;
 
 
 import org.junit.jupiter.api.Assertions;
@@ -12,6 +12,7 @@ import org.maveric.currencyexchange.enums.CurrencyType;
 import org.maveric.currencyexchange.payload.request.OrderRequest;
 import org.maveric.currencyexchange.payload.response.OrderResponse;
 import org.maveric.currencyexchange.repository.*;
+import org.maveric.currencyexchange.service.IExchangeRatesService;
 import org.maveric.currencyexchange.serviceimpl.CustomerServiceImpl;
 import org.maveric.currencyexchange.serviceimpl.ExchangeRatesServiceImpl;
 import org.maveric.currencyexchange.serviceimpl.OrderServiceImpl;
