@@ -10,11 +10,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import static org.maveric.currencyexchange.constants.ApiEndpointConstants.*;
+import static org.maveric.currencyexchange.constants.AppConstants.*;
+import static org.maveric.currencyexchange.constants.SecurityConstants.*;
 
 @RestController
-@RequestMapping(value = "/orders")
-@SecurityRequirement(name = "bearerAuth")
-@CrossOrigin(origins = "${corsAllowedOrigin}")
+@RequestMapping(value = ORDER_URL_PREFIX)
+@SecurityRequirement(name = SECURITY_SCHEME_NAME)
 public class OrderController {
     private IOrderService orderService;
 
@@ -22,14 +24,14 @@ public class OrderController {
         this.orderService = orderService;
     }
 
-    @GetMapping(value = "/watchlist")
+    @GetMapping(value = ORDER_WATCHLIST_URL)
     public ResponseEntity<List<OrderResponse>> fetchAllTransactions(
-            @RequestParam(defaultValue = "${defaultPage}") Integer page,
-            @RequestParam(defaultValue = "${defaultSize}") Integer size) {
+            @RequestParam(defaultValue = DEFAULT_PAGE) Integer page,
+            @RequestParam(defaultValue = DEFAULT_SIZE) Integer size) {
         return ResponseEntity.status(HttpStatus.OK).body(orderService.fetchAllTransactions(page, size));
     }
 
-    @PostMapping(value = "/placeorder")
+    @PostMapping(value = ORDER_PLACE_URL)
     public ResponseEntity<OrderResponse> createTransaction(@Valid @RequestBody OrderRequest orderRequest) {
         return ResponseEntity.status(HttpStatus.OK).body(orderService.createTransaction(orderRequest));
     }

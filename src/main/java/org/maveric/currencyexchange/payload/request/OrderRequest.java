@@ -2,20 +2,22 @@ package org.maveric.currencyexchange.payload.request;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
-import lombok.*;
-import org.maveric.currencyexchange.payload.response.CustomerResponse;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import static org.maveric.currencyexchange.constants.ValidationConstants.*;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class OrderRequest {
-    @NotBlank(message = "Source account can't be Blank")
+    @NotBlank(message = SRCACCOUNT_MESSAGE)
     private String srcAccount;
-
-    @NotBlank(message = "Destination account can't be Blank")
+    @NotBlank(message = DESTACCOUNT_MESSAGE)
     private String destAccount;
-
-    @Positive(message = "Amount must be a positive number and Not Blank")
+    @Positive(message = AMOUNT_POSITIVE_MESSAGE)
     private double amount;
 }

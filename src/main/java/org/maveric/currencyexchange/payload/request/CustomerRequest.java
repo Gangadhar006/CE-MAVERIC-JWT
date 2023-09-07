@@ -4,6 +4,8 @@ import jakarta.validation.constraints.*;
 import lombok.*;
 import org.maveric.currencyexchange.enums.GenderType;
 
+import static org.maveric.currencyexchange.constants.ValidationConstants.*;
+
 import java.time.LocalDate;
 
 @Getter
@@ -11,25 +13,25 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CustomerRequest {
-    @NotBlank(message = "First name is required")
-    @Pattern(regexp = "^[A-Za-z]+$", message = "Only alphabetic characters are allowed")
+    @NotBlank(message = FIRST_NAME_MESSAGE)
+    @Pattern(regexp = FIRST_NAME_PATTERN, message = NAME_PATTERN_MESSAGE)
     private String firstName;
-    @NotBlank(message = "Last name is required")
-    @Pattern(regexp = "^[A-Za-z]+$", message = "Only alphabetic characters are allowed")
+    @NotBlank(message = LAST_NAME_MESSAGE)
+    @Pattern(regexp = LAST_NAME_PATTERN, message = NAME_PATTERN_MESSAGE)
     private String lastName;
     @NotNull
-    @Past(message = "Enter valid Date of Birth")
+    @Past(message = DOB_MESSAGE)
     private LocalDate dob;
     @NotBlank
-    @Pattern(regexp = "^[A-Za-z0-9+_.-]+@(.+)$", message = "Enter valid Email")
+    @Pattern(regexp = EMAIL_PATTERN, message = EMAIL_PATTERN_MESSAGE)
     private String email;
-    @NotNull(message = "Gender is required")
+    @NotNull(message = GENDER_MESSAGE)
     private GenderType gender;
 
-    @Size(min = 10, max = 10, message = "phone number length should be 10")
-    @Pattern(regexp = "\\d+", message = "Phone number should contain only digits")
+    @Size(min = PHONE_LENGTH, max = PHONE_LENGTH, message = PHONE_MESSAGE)
+    @Pattern(regexp = PHONE_PATTERN, message = PHONE_PATTERN_MESSAGE)
     private String phone;
-    @NotBlank(message = "Password is required")
-    @Size(min = 8, message = "Password must be at least 8 characters long")
+    @NotBlank(message = PASSWORD_MESSAGE)
+    @Size(min = PASSWORD_LENGTH, message = PASSWORD_PATTERN_MESSAGE)
     private String password;
 }

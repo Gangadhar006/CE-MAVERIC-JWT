@@ -6,12 +6,14 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import static org.maveric.currencyexchange.constants.SecurityConstants.EXCHANGE_RATES_API_URL;
+
 @Service
 public class ExchangeRatesServiceImpl implements IExchangeRatesService {
 
     private String API_URL;
 
-    public ExchangeRatesServiceImpl(@Value("${exchange-rates.api-url}") String API_URL) {
+    public ExchangeRatesServiceImpl(@Value(EXCHANGE_RATES_API_URL) String API_URL) {
         this.API_URL = API_URL;
     }
 

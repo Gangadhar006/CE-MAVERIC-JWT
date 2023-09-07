@@ -1,13 +1,13 @@
 package org.maveric.currencyexchange.entity;
 
-import lombok.ToString;
-import org.maveric.currencyexchange.enums.GenderType;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.maveric.currencyexchange.enums.GenderType;
 
 import java.time.LocalDate;
 import java.time.Period;
@@ -18,9 +18,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-
 @Entity
-public class Customer {
+public class Customer{
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "customer_seq_generator")
     @SequenceGenerator(name = "customer_seq_generator", sequenceName = "customer_seq", allocationSize = 1)
@@ -60,7 +59,7 @@ public class Customer {
     private Credentials credentials;
 
     @PrePersist
-    private void prePersist() {
+    private void setAge() {
         LocalDate currentDate = LocalDate.now();
         age = Period.between(dob, currentDate).getYears();
     }

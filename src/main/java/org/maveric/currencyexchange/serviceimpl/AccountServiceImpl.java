@@ -5,7 +5,7 @@ import org.maveric.currencyexchange.entity.Customer;
 import org.maveric.currencyexchange.exception.AccountMisMatchException;
 import org.maveric.currencyexchange.exception.AccountNotFoundException;
 import org.maveric.currencyexchange.exception.CustomerNotFoundException;
-import org.maveric.currencyexchange.exception.ForbiddenAccessException;
+import org.maveric.currencyexchange.exception.UnauthorizedAccessException;
 import org.maveric.currencyexchange.payload.request.AccountRequest;
 import org.maveric.currencyexchange.payload.response.AccountResponse;
 import org.maveric.currencyexchange.repository.IAccountRepository;
@@ -19,6 +19,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import static org.maveric.currencyexchange.constants.AppConstants.*;
 
 @Service
 public class AccountServiceImpl implements IAccountService {
@@ -37,7 +38,7 @@ public class AccountServiceImpl implements IAccountService {
     @Override
     @Transactional
     public AccountResponse createAccount(long customerId, AccountRequest accountRequest) {
-        Customer customer = verifyCustomer(customerId);
+        Customer customer = verfiyCustomer(customerId);
         Account account = mapper.map(accountRequest, Account.class);
         account.setCustomer(customer);
         account = accountRepo.save(account);
@@ -50,7 +51,7 @@ public class AccountServiceImpl implements IAccountService {
     @Override
     @Transactional
     public AccountResponse updateAccount(long customerId, String accountNumber, AccountRequest accountRequest) {
-        verifyCustomer(customerId);
+        verfiyCustomer(customerId);
         return updateAccountUtil(customerId, accountNumber, accountRequest);
     }
 
@@ -67,17 +68,17 @@ public class AccountServiceImpl implements IAccountService {
     public String deleteAccount(long customerId, String accountNumber) {
         Account account = verifyAccount(accountNumber, customerId);
         accountRepo.delete(account);
-        return "account deleted successfully";
+        return ACCOUNT_DELETE_MESSAGE;
     }
 
     @Override
     public List<AccountResponse> findAllAccounts(long customerId) {
-        Customer customer = verifyCustomer(customerId);
+        Customer customer = verfiyCustomer(customerId);
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String email = authentication.getName();
         Customer authenticatedCustomer = customerRepo.findByEmail(email).orElseThrow(CustomerNotFoundException::new);
         if (!authenticatedCustomer.getEmail().equals(customer.getEmail()))
-            throw new ForbiddenAccessException();
+            throw new UnauthorizedAccessException();
         List<Account> accounts = accountRepo.findByCustomerId(customerId);
         return accounts.stream()
                 .map(account -> mapper.map(account, AccountResponse.class))
@@ -101,7 +102,7 @@ public class AccountServiceImpl implements IAccountService {
         return account;
     }
 
-    public Customer verifyCustomer(long customerId) {
+    public Customer verfiyCustomer(long customerId) {
         return customerRepo.findById(customerId).orElseThrow(CustomerNotFoundException::new);
     }
 }

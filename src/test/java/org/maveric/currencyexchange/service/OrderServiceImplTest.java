@@ -1,10 +1,10 @@
 package org.maveric.currencyexchange.service;
 
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.maveric.currencyexchange.entity.Account;
 import org.maveric.currencyexchange.entity.Customer;
 import org.maveric.currencyexchange.entity.Transaction;
@@ -19,6 +19,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
@@ -33,7 +34,7 @@ import java.util.List;
 import java.util.Optional;
 import static org.mockito.Mockito.*;
 
-@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(MockitoExtension.class)
 public class OrderServiceImplTest {
 
     @Mock
@@ -65,7 +66,7 @@ public class OrderServiceImplTest {
     private OrderServiceImpl orderService;
 
     private CustomerServiceImpl customerService;
-    @Before()
+    @BeforeEach()
     public void setUp() {
         this.orderService = new OrderServiceImpl(transactionRepo,customerRepo, accountRepo,mapper,exchangeService);
         customerService = new CustomerServiceImpl(mapper,customerRepo,CredentialsRepo,rolesRepo,passwordEncoder);
@@ -83,7 +84,7 @@ public class OrderServiceImplTest {
         when(transactionRepo.findByCustomerId(Mockito.any(),Mockito.any(Pageable.class))).thenReturn(transactionPage);
         when(customerRepo.findByEmail(Mockito.any())).thenReturn(Optional.of(new Customer()));
         List<OrderResponse> orderResponseList = orderService.fetchAllTransactions(0,1);
-        Assert.assertEquals(2,orderResponseList.size());
+        Assertions.assertEquals(2,orderResponseList.size());
     }
 
     @Test
@@ -124,8 +125,8 @@ public class OrderServiceImplTest {
         authentication.setAuthenticated(true);
         OrderResponse actualResponse = orderService.createTransaction(orderRequest);
         System.out.println(actualResponse);
-        Assert.assertEquals("INR/USD",actualResponse.getCurrencyPair());
-        Assert.assertEquals((double) 100,actualResponse.getAmount(),0);
+        Assertions.assertEquals("INR/USD",actualResponse.getCurrencyPair());
+        Assertions.assertEquals((double) 100,actualResponse.getAmount(),0);
     }
 
 }

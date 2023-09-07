@@ -1,0 +1,13 @@
+spring:
+  config:
+    import: application-common.yaml
+  datasource:
+    username: user2
+    url: jdbc:mysql://172.16.238.163:3306/db2
+    password: password2
+
+server:
+  port: '9901'
+  address: 172.16.238.163
+
+corsAllowedOrigin: http://172.16.238.163:4200/

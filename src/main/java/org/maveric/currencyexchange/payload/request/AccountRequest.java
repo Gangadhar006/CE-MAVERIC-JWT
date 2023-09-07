@@ -6,23 +6,24 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.maveric.currencyexchange.entity.Customer;
 import org.maveric.currencyexchange.enums.AccountType;
 import org.maveric.currencyexchange.enums.CurrencyType;
 
 import java.math.BigDecimal;
+
+import static org.maveric.currencyexchange.constants.ValidationConstants.*;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class AccountRequest {
-    @NotNull(message = "Amount is required")
-    @Positive(message = "Amount should be Positive")
+    @NotNull(message = AMOUNT_NOTNULL_MESSAGE)
+    @Positive(message = AMOUNT_POSITIVE_MESSAGE)
     private BigDecimal amount;
-    @NotNull(message = "Account type is required")
+    @NotNull(message = ACCOUNT_TYPE_MESSAGE)
     private AccountType accountType;
-    @NotNull(message = "Currency is required")
+    @NotNull(message = CURRENCY_TYPE_MESSAGE)
     private CurrencyType currency;
     private boolean active;
     private String accountNumber;

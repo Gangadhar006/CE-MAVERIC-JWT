@@ -6,15 +6,15 @@ import org.maveric.currencyexchange.payload.response.JwtAuthenticationResponse;
 import org.maveric.currencyexchange.service.IAuthenticationService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import static org.maveric.currencyexchange.constants.ApiEndpointConstants.*;
 
 @RestController
-@RequestMapping("/authenticate")
+@RequestMapping(AUTHENTICATE_URL_PREFIX)
 @RequiredArgsConstructor
-@CrossOrigin(origins = "${corsAllowedOrigin}")
 public class AuthenticationController {
     private final IAuthenticationService authenticationService;
 
-    @PostMapping("/login")
+    @PostMapping(value = AUTHENTICATE_LOGIN_URL)
     public ResponseEntity<JwtAuthenticationResponse> signin(@RequestBody LoginRequest request) {
         return ResponseEntity.ok(authenticationService.signin(request));
     }

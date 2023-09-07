@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.util.Date;
+import static org.maveric.currencyexchange.constants.AppConstants.*;
 
 @Data
 @AllArgsConstructor
@@ -31,7 +32,7 @@ public class Transaction {
 
     @PrePersist
     public void calculateValue() {
-        totalValue = String.format("%.3f", rate * amount)
+        totalValue = String.format(AMOUNT_PRECISION, rate * amount)
                 .concat(" ")
                 .concat(currencyPair.substring(4, 7));
     }

@@ -1,17 +1,16 @@
 package org.maveric.currencyexchange.controller;
 
-
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.maveric.currencyexchange.payload.request.OrderRequest;
 import org.maveric.currencyexchange.payload.response.OrderResponse;
 import org.maveric.currencyexchange.repository.ITransactionRepository;
 import org.maveric.currencyexchange.service.IOrderService;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.ResponseEntity;
 
 import java.sql.Date;
@@ -20,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(MockitoExtension.class)
 public class OrderControllerTest {
 
     @Mock
@@ -30,7 +29,7 @@ public class OrderControllerTest {
     private ITransactionRepository transactionRepository;
 
     private OrderController orderController;
-    @Before()
+    @BeforeEach()
     public void setUp() {
         this.orderController = new OrderController(orderService);
     }
@@ -38,7 +37,7 @@ public class OrderControllerTest {
     @Test
     public void constructorTest(){
         OrderController orderController1=new OrderController(orderService);
-        Assert.assertNotNull(orderController1);
+        Assertions.assertNotNull(orderController1);
     }
 
 
@@ -54,8 +53,8 @@ public class OrderControllerTest {
 
         ResponseEntity<List<OrderResponse>> actualResponse = orderController.fetchAllTransactions(0,1);
 
-        Assert.assertEquals(200,actualResponse.getStatusCode().value());
-        Assert.assertEquals(2,actualResponse.getBody().size());
+        Assertions.assertEquals(200,actualResponse.getStatusCode().value());
+        Assertions.assertEquals(2,actualResponse.getBody().size());
     }
 
     @Test
@@ -67,8 +66,7 @@ public class OrderControllerTest {
 
         ResponseEntity <OrderResponse> actualResponse = orderController.createTransaction(orderRequest);
 
-        Assert.assertEquals(200,actualResponse.getStatusCode().value());
-        Assert.assertEquals(Date.valueOf(LocalDate.now()).toString(),actualResponse.getBody().getTime().toString());
+        Assertions.assertEquals(200,actualResponse.getStatusCode().value());
+        Assertions.assertEquals(Date.valueOf(LocalDate.now()).toString(),actualResponse.getBody().getTime().toString());
     }
-
 }

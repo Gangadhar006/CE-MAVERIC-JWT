@@ -10,6 +10,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
 
@@ -19,7 +20,7 @@ import java.util.List;
 @Builder
 
 @Entity
-public class Credentials implements UserDetails {
+public class Credentials implements UserDetails{
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "security_seq_generator")
     @SequenceGenerator(name = "security_seq_generator", sequenceName = "security_seq", allocationSize = 1)

@@ -1,0 +1,12 @@
+spring:
+  config:
+    import: application-common.yaml
+  datasource:
+    username: root
+    url: jdbc:mysql://localhost:3306/ce
+    password: pass
+
+server:
+  port: '8080'
+
+corsAllowedOrigin: http://localhost:4200/

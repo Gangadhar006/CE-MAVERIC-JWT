@@ -23,7 +23,7 @@ public class AuthenticationServiceImpl implements IAuthenticationService {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword()));
 
         Credentials credential = credentialsRepo.findByEmail(request.getEmail())
-                .orElseThrow(() -> new IllegalArgumentException("Invalid email or password."));
+                .orElseThrow(IllegalArgumentException::new);
         String jwt = jwtService.generateToken(credential);
         return JwtAuthenticationResponse.builder().token(jwt).build();
     }
