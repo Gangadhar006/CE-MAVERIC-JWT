@@ -1,5 +1,6 @@
 package org.maveric.currencyexchange.payload.request;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.validation.constraints.*;
 import lombok.*;
 import org.maveric.currencyexchange.enums.GenderType;

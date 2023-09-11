@@ -2,10 +2,8 @@ package org.maveric.currencyexchange.serviceimpl;
 
 import org.maveric.currencyexchange.entity.Account;
 import org.maveric.currencyexchange.entity.Customer;
-import org.maveric.currencyexchange.exception.AccountMisMatchException;
-import org.maveric.currencyexchange.exception.AccountNotFoundException;
-import org.maveric.currencyexchange.exception.CustomerNotFoundException;
-import org.maveric.currencyexchange.exception.UnauthorizedAccessException;
+import org.maveric.currencyexchange.enums.CurrencyType;
+import org.maveric.currencyexchange.exception.*;
 import org.maveric.currencyexchange.payload.request.AccountRequest;
 import org.maveric.currencyexchange.payload.response.AccountResponse;
 import org.maveric.currencyexchange.repository.IAccountRepository;
@@ -13,13 +11,17 @@ import org.maveric.currencyexchange.repository.ICustomerRepository;
 import org.maveric.currencyexchange.service.IAccountService;
 import org.maveric.currencyexchange.utils.AccountNumberGenerator;
 import org.modelmapper.ModelMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-import static org.maveric.currencyexchange.constants.AppConstants.*;
+import java.util.stream.Stream;
+
+import static org.maveric.currencyexchange.constants.AppConstants.ACCOUNT_DELETE_MESSAGE;
 
 @Service
 public class AccountServiceImpl implements IAccountService {
@@ -27,6 +29,8 @@ public class AccountServiceImpl implements IAccountService {
     private IAccountRepository accountRepo;
     private ICustomerRepository customerRepo;
     private AccountNumberGenerator accountNumberGenerator;
+
+    private Logger logger = LoggerFactory.getLogger(this.getClass());
 
     public AccountServiceImpl(ModelMapper mapper, IAccountRepository accountRepo, ICustomerRepository customerRepo, AccountNumberGenerator accountNumberGenerator) {
         this.accountNumberGenerator = accountNumberGenerator;
@@ -41,12 +45,25 @@ public class AccountServiceImpl implements IAccountService {
         Customer customer = verfiyCustomer(customerId);
         Account account = mapper.map(accountRequest, Account.class);
         account.setCustomer(customer);
+
+        logger.info(Boolean.toString(isCustomerHasAccountWithSameCurrency(customerId, accountRequest)));
+        if (isCustomerHasAccountWithSameCurrency(customerId, accountRequest)) {
+            logger.info(Boolean.toString(isCustomerHasAccountWithSameCurrency(customerId, accountRequest)));
+            throw new AccountAlreadyExistsException();
+        }
+
         account = accountRepo.save(account);
         String accountNumber = accountNumberGenerator.generateUniqueAccountNumber(account.getId());
         account.setAccountNumber(accountNumber);
         return mapper.map(account, AccountResponse.class);
     }
 
+    private boolean isCustomerHasAccountWithSameCurrency(long customerId, AccountRequest accountRequest) {
+        List<Account> accounts = accountRepo.findByCustomerId(customerId);
+        CurrencyType currency = accountRequest.getCurrency();
+        Stream<Account> filteredAccounts = accounts.stream().filter(account -> account.getCurrency().equals(currency));
+        return filteredAccounts.count() == 0 ? false : true;
+    }
 
     @Override
     @Transactional

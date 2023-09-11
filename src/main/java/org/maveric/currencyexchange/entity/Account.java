@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
-import org.maveric.currencyexchange.enums.AccountType;
 import org.maveric.currencyexchange.enums.CurrencyType;
 
 import java.math.BigDecimal;
@@ -28,9 +27,6 @@ public class Account {
     private Boolean active;
     @CreationTimestamp
     private Date openingDate;
-    @Column(nullable = false)
-    @Enumerated(EnumType.STRING)
-    private AccountType accountType;
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customer_id")
     private Customer customer;

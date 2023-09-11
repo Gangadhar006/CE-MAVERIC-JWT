@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.maveric.currencyexchange.enums.AccountType;
 import org.maveric.currencyexchange.enums.CurrencyType;
 
 import java.math.BigDecimal;
@@ -21,10 +20,7 @@ public class AccountRequest {
     @NotNull(message = AMOUNT_NOTNULL_MESSAGE)
     @Positive(message = AMOUNT_POSITIVE_MESSAGE)
     private BigDecimal amount;
-    @NotNull(message = ACCOUNT_TYPE_MESSAGE)
-    private AccountType accountType;
     @NotNull(message = CURRENCY_TYPE_MESSAGE)
     private CurrencyType currency;
     private boolean active;
-    private String accountNumber;
 }

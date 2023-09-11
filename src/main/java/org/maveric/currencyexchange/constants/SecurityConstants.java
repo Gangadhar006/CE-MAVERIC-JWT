@@ -1,7 +1,9 @@
 package org.maveric.currencyexchange.constants;
 
 public class SecurityConstants {
-    private SecurityConstants(){}
+    private SecurityConstants() {
+    }
+
     public static final String[] ADMIN_URL = {
             "/customer/**",
             "/account/create/**",
