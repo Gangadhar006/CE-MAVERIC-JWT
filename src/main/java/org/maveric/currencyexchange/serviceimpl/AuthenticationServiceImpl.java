@@ -2,6 +2,7 @@ package org.maveric.currencyexchange.serviceimpl;
 
 import lombok.RequiredArgsConstructor;
 import org.maveric.currencyexchange.entity.Credentials;
+import org.maveric.currencyexchange.enums.RoleType;
 import org.maveric.currencyexchange.payload.request.LoginRequest;
 import org.maveric.currencyexchange.payload.response.JwtAuthenticationResponse;
 import org.maveric.currencyexchange.repository.ICredentialsRepository;
@@ -24,7 +25,12 @@ public class AuthenticationServiceImpl implements IAuthenticationService {
 
         Credentials credential = credentialsRepo.findByEmail(request.getEmail())
                 .orElseThrow(IllegalArgumentException::new);
+        RoleType role = credential.getRole().getRole();
         String jwt = jwtService.generateToken(credential);
-        return JwtAuthenticationResponse.builder().token(jwt).build();
+        return JwtAuthenticationResponse.builder()
+                .token(jwt)
+                .customerId(credential.getId())
+                .role(role)
+                .build();
     }
 }

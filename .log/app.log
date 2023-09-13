@@ -1,0 +1,82 @@
+2023-09-13T09:09:58.782+05:30  INFO 3824 --- [restartedMain] o.m.c.CurrencyExchangeApplication        : Starting CurrencyExchangeApplication using Java 17.0.6 with PID 3824 (C:\Users\gangadharp\Desktop\CE-Gitlab\target\classes started by gangadharp in C:\Users\gangadharp\Desktop\CE-Gitlab)
+2023-09-13T09:09:58.801+05:30  INFO 3824 --- [restartedMain] o.m.c.CurrencyExchangeApplication        : The following 1 profile is active: "dev"
+2023-09-13T09:09:58.916+05:30  INFO 3824 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-09-13T09:09:58.917+05:30  INFO 3824 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-09-13T09:10:01.146+05:30  INFO 3824 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-13T09:10:01.322+05:30  INFO 3824 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 155 ms. Found 5 JPA repository interfaces.
+2023-09-13T09:10:03.058+05:30  INFO 3824 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-13T09:10:03.074+05:30  INFO 3824 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-13T09:10:03.075+05:30  INFO 3824 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-13T09:10:03.208+05:30  INFO 3824 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-13T09:10:03.208+05:30  INFO 3824 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4289 ms
+2023-09-13T09:10:03.573+05:30  INFO 3824 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-13T09:10:03.705+05:30  INFO 3824 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.6.Final
+2023-09-13T09:10:03.710+05:30  INFO 3824 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-13T09:10:04.056+05:30  INFO 3824 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-13T09:10:04.365+05:30  INFO 3824 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-13T09:10:04.394+05:30  INFO 3824 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-13T09:10:05.094+05:30  INFO 3824 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4c380808
+2023-09-13T09:10:05.098+05:30  INFO 3824 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-13T09:10:05.694+05:30  INFO 3824 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-13T09:10:06.931+05:30  INFO 3824 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-13T09:10:07.039+05:30  INFO 3824 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-13T09:10:08.129+05:30  INFO 3824 --- [restartedMain] o.m.currencyexchange.aop.LoggingAspect   : Entering method: 'userDetailsService' class: 'org.maveric.currencyexchange.serviceimpl.UserServiceImpl'
+2023-09-13T09:10:08.130+05:30  INFO 3824 --- [restartedMain] o.m.currencyexchange.aop.LoggingAspect   : Exiting method: 'userDetailsService' class: 'org.maveric.currencyexchange.serviceimpl.UserServiceImpl'
+2023-09-13T09:10:08.550+05:30  WARN 3824 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-13T09:10:09.394+05:30  INFO 3824 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@7d0ebeca, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@720e9202, org.springframework.security.web.context.SecurityContextHolderFilter@76f012d9, org.springframework.security.web.header.HeaderWriterFilter@6f775746, org.springframework.security.web.authentication.logout.LogoutFilter@2d3101ed, org.maveric.currencyexchange.config.JwtAuthenticationFilter@4a1374c3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@ab5fb65, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3933cd6e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6c42cff5, org.springframework.security.web.session.SessionManagementFilter@5df7cf02, org.springframework.security.web.access.ExceptionTranslationFilter@7d6db945, org.springframework.security.web.access.intercept.AuthorizationFilter@439ba927]
+2023-09-13T09:10:10.103+05:30  INFO 3824 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-09-13T09:10:10.185+05:30  INFO 3824 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-09-13T09:10:10.201+05:30  INFO 3824 --- [restartedMain] o.m.c.CurrencyExchangeApplication        : Started CurrencyExchangeApplication in 12.258 seconds (process running for 13.263)
+2023-09-13T09:10:33.951+05:30  INFO 3824 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-13T09:10:33.952+05:30  INFO 3824 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-13T09:10:33.955+05:30  INFO 3824 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-09-13T09:10:35.537+05:30  INFO 3824 --- [http-nio-8080-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 957 ms
+2023-09-13T09:42:18.085+05:30  INFO 3824 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-13T09:42:18.092+05:30  INFO 3824 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-13T09:42:18.098+05:30  INFO 3824 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-09-13T09:42:28.919+05:30  INFO 21992 --- [restartedMain] o.m.c.CurrencyExchangeApplication        : Starting CurrencyExchangeApplication using Java 17.0.6 with PID 21992 (C:\Users\gangadharp\Desktop\CE-Gitlab\target\classes started by gangadharp in C:\Users\gangadharp\Desktop\CE-Gitlab)
+2023-09-13T09:42:28.922+05:30  INFO 21992 --- [restartedMain] o.m.c.CurrencyExchangeApplication        : The following 1 profile is active: "dev"
+2023-09-13T09:42:29.013+05:30  INFO 21992 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-09-13T09:42:29.013+05:30  INFO 21992 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-09-13T09:42:30.062+05:30  INFO 21992 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-09-13T09:42:30.144+05:30  INFO 21992 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 74 ms. Found 5 JPA repository interfaces.
+2023-09-13T09:42:31.238+05:30  INFO 21992 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-09-13T09:42:31.252+05:30  INFO 21992 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-09-13T09:42:31.252+05:30  INFO 21992 --- [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.11]
+2023-09-13T09:42:31.345+05:30  INFO 21992 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-09-13T09:42:31.345+05:30  INFO 21992 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2331 ms
+2023-09-13T09:42:31.604+05:30  INFO 21992 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-09-13T09:42:31.703+05:30  INFO 21992 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.6.Final
+2023-09-13T09:42:31.708+05:30  INFO 21992 --- [restartedMain] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-09-13T09:42:31.929+05:30  INFO 21992 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-13T09:42:32.143+05:30  INFO 21992 --- [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-09-13T09:42:32.167+05:30  INFO 21992 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-09-13T09:42:32.696+05:30  INFO 21992 --- [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@375fdda3
+2023-09-13T09:42:32.699+05:30  INFO 21992 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-09-13T09:42:33.198+05:30  INFO 21992 --- [restartedMain] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-09-13T09:42:34.104+05:30  INFO 21992 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-09-13T09:42:34.153+05:30  INFO 21992 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-09-13T09:42:34.834+05:30  INFO 21992 --- [restartedMain] o.m.currencyexchange.aop.LoggingAspect   : Entering method: 'userDetailsService' class: 'org.maveric.currencyexchange.serviceimpl.UserServiceImpl'
+2023-09-13T09:42:34.835+05:30  INFO 21992 --- [restartedMain] o.m.currencyexchange.aop.LoggingAspect   : Exiting method: 'userDetailsService' class: 'org.maveric.currencyexchange.serviceimpl.UserServiceImpl'
+2023-09-13T09:42:35.073+05:30  WARN 21992 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-09-13T09:42:35.478+05:30  INFO 21992 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@13990b0b, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@289aa3e9, org.springframework.security.web.context.SecurityContextHolderFilter@7d45d60d, org.springframework.security.web.header.HeaderWriterFilter@473efe11, org.springframework.security.web.authentication.logout.LogoutFilter@2052d800, org.maveric.currencyexchange.config.JwtAuthenticationFilter@184b45b2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@547a900f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@56f661c2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@32ed92f9, org.springframework.security.web.session.SessionManagementFilter@1185f6ee, org.springframework.security.web.access.ExceptionTranslationFilter@3645a018, org.springframework.security.web.access.intercept.AuthorizationFilter@62399ca]
+2023-09-13T09:42:35.829+05:30  INFO 21992 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-09-13T09:42:35.866+05:30  INFO 21992 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-09-13T09:42:35.879+05:30  INFO 21992 --- [restartedMain] o.m.c.CurrencyExchangeApplication        : Started CurrencyExchangeApplication in 7.576 seconds (process running for 8.125)
+2023-09-13T09:42:45.938+05:30  INFO 21992 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-09-13T09:42:45.940+05:30  INFO 21992 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-09-13T09:42:45.942+05:30  INFO 21992 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-09-13T09:42:47.336+05:30  INFO 21992 --- [http-nio-8080-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 972 ms
+2023-09-13T09:43:51.346+05:30  INFO 21992 --- [http-nio-8080-exec-4] o.m.currencyexchange.aop.LoggingAspect   : Entering method: 'signin' class: 'org.maveric.currencyexchange.serviceimpl.AuthenticationServiceImpl'
+2023-09-13T09:43:51.980+05:30  INFO 21992 --- [http-nio-8080-exec-4] o.m.currencyexchange.aop.LoggingAspect   : Exiting method: 'signin' class: 'org.maveric.currencyexchange.serviceimpl.AuthenticationServiceImpl'
+2023-09-13T09:44:02.052+05:30  INFO 21992 --- [http-nio-8080-exec-5] o.m.currencyexchange.aop.LoggingAspect   : Entering method: 'signin' class: 'org.maveric.currencyexchange.serviceimpl.AuthenticationServiceImpl'
+2023-09-13T09:44:02.408+05:30  INFO 21992 --- [http-nio-8080-exec-5] o.m.currencyexchange.aop.LoggingAspect   : Entering method: 'generateToken' class: 'org.maveric.currencyexchange.serviceimpl.JwtServiceImpl'
+2023-09-13T09:44:02.502+05:30  INFO 21992 --- [http-nio-8080-exec-5] o.m.currencyexchange.aop.LoggingAspect   : Exiting method: 'generateToken' class: 'org.maveric.currencyexchange.serviceimpl.JwtServiceImpl'
+2023-09-13T09:44:02.503+05:30  INFO 21992 --- [http-nio-8080-exec-5] o.m.currencyexchange.aop.LoggingAspect   : Exiting method: 'signin' class: 'org.maveric.currencyexchange.serviceimpl.AuthenticationServiceImpl'
+2023-09-13T09:44:19.698+05:30  INFO 21992 --- [http-nio-8080-exec-8] o.m.currencyexchange.aop.LoggingAspect   : Entering method: 'signin' class: 'org.maveric.currencyexchange.serviceimpl.AuthenticationServiceImpl'
+2023-09-13T09:44:19.919+05:30  INFO 21992 --- [http-nio-8080-exec-8] o.m.currencyexchange.aop.LoggingAspect   : Entering method: 'generateToken' class: 'org.maveric.currencyexchange.serviceimpl.JwtServiceImpl'
+2023-09-13T09:44:19.921+05:30  INFO 21992 --- [http-nio-8080-exec-8] o.m.currencyexchange.aop.LoggingAspect   : Exiting method: 'generateToken' class: 'org.maveric.currencyexchange.serviceimpl.JwtServiceImpl'
+2023-09-13T09:44:19.922+05:30  INFO 21992 --- [http-nio-8080-exec-8] o.m.currencyexchange.aop.LoggingAspect   : Exiting method: 'signin' class: 'org.maveric.currencyexchange.serviceimpl.AuthenticationServiceImpl'
+2023-09-13T09:51:18.298+05:30  INFO 21992 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-09-13T09:51:18.302+05:30  INFO 21992 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-09-13T09:51:18.311+05:30  INFO 21992 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

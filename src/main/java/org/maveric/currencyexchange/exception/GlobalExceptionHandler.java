@@ -73,13 +73,13 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(InvalidCredentialsException.class)
     public ResponseEntity<ErrorResponse> usernameNotFound(InvalidCredentialsException exception) {
-        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.NOT_FOUND, CREDENTIALS_CHECK_MESSAGE);
+        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.NOT_FOUND, CREDENTIALS_CHECK_EXCEPTION_MESSAGE);
         return ResponseEntity.status(errorResponse.getStatus()).body(errorResponse);
     }
 
     @ExceptionHandler(AccountAlreadyExistsException.class)
     public ResponseEntity<ErrorResponse> accountAlreadyExists(AccountAlreadyExistsException exception) {
-        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.NOT_FOUND, ACCOUNT_ALREADY_EXISTS_MESSAGE);
+        ErrorResponse errorResponse = new ErrorResponse(HttpStatus.NOT_FOUND, ACCOUNT_ALREADY_EXISTS_EXCEPTION_MESSAGE);
         return ResponseEntity.status(errorResponse.getStatus()).body(errorResponse);
     }
 }

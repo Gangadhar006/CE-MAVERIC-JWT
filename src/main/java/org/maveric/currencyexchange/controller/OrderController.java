@@ -17,6 +17,7 @@ import static org.maveric.currencyexchange.constants.SecurityConstants.*;
 @RestController
 @RequestMapping(value = ORDER_URL_PREFIX)
 @SecurityRequirement(name = SECURITY_SCHEME_NAME)
+@CrossOrigin(origins = "http://localhost:4200")
 public class OrderController {
     private IOrderService orderService;
 

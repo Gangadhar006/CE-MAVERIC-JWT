@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="23c569e4-a22e-4f7b-be84-b8af5cf14518" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/maveric/currencyexchange/CurrencyExchangeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/maveric/currencyexchange/CurrencyExchangeApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/maveric/currencyexchange/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/maveric/currencyexchange/config/CorsConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/maveric/currencyexchange/constants/ExceptionConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/maveric/currencyexchange/constants/ExceptionConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/maveric/currencyexchange/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/maveric/currencyexchange/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/maveric/currencyexchange/exception/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/maveric/currencyexchange/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/maveric/currencyexchange/payload/response/JwtAuthenticationResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/maveric/currencyexchange/payload/response/JwtAuthenticationResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/maveric/currencyexchange/serviceimpl/AuthenticationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/maveric/currencyexchange/serviceimpl/AuthenticationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/maveric/currencyexchange/serviceimpl/JwtServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/maveric/currencyexchange/serviceimpl/JwtServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-common.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-common.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application-dev.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-dev.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/maveric/currencyexchange/serviceimpl/AccountServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/maveric/currencyexchange/serviceimpl/AccountServiceImplTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2VFKyR2E2edckYhlNpEXtDgbHR9" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Application.CE-MAVERIC">
+    <configuration name="CE-MAVERIC" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.maveric.currencyexchange.CurrencyExchangeApplication" />
+      <module name="currency-exchange" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ExchangeRatesServiceImplTest.getLatestExchangeRatesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="currency-exchange" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.maveric.currencyexchange.serviceimpl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.maveric.currencyexchange.serviceimpl" />
+      <option name="MAIN_CLASS_NAME" value="org.maveric.currencyexchange.serviceimpl.ExchangeRatesServiceImplTest" />
+      <option name="METHOD_NAME" value="getLatestExchangeRatesTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JwtServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="currency-exchange" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.maveric.currencyexchange.serviceimpl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.maveric.currencyexchange.serviceimpl" />
+      <option name="MAIN_CLASS_NAME" value="org.maveric.currencyexchange.serviceimpl.JwtServiceImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JwtServiceImplTest.testExtractEmail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="currency-exchange" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.maveric.currencyexchange.serviceimpl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.maveric.currencyexchange.serviceimpl" />
+      <option name="MAIN_CLASS_NAME" value="org.maveric.currencyexchange.serviceimpl.JwtServiceImplTest" />
+      <option name="METHOD_NAME" value="testExtractEmail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JwtServiceImplTest.testGenerateToken" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="currency-exchange" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.maveric.currencyexchange.serviceimpl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.maveric.currencyexchange.serviceimpl" />
+      <option name="MAIN_CLASS_NAME" value="org.maveric.currencyexchange.serviceimpl.JwtServiceImplTest" />
+      <option name="METHOD_NAME" value="testGenerateToken" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JwtServiceImplTest.testIsTokenValid" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="currency-exchange" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.maveric.currencyexchange.serviceimpl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.maveric.currencyexchange.serviceimpl" />
+      <option name="MAIN_CLASS_NAME" value="org.maveric.currencyexchange.serviceimpl.JwtServiceImplTest" />
+      <option name="METHOD_NAME" value="testIsTokenValid" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ExchangeRatesServiceImplTest.getLatestExchangeRatesTest" />
+        <item itemvalue="JUnit.JwtServiceImplTest" />
+        <item itemvalue="JUnit.JwtServiceImplTest.testExtractEmail" />
+        <item itemvalue="JUnit.JwtServiceImplTest.testGenerateToken" />
+        <item itemvalue="JUnit.JwtServiceImplTest.testIsTokenValid" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="23c569e4-a22e-4f7b-be84-b8af5cf14518" name="Changes" comment="" />
+      <created>1694426648330</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1694426648330</updated>
+    </task>
+    <servers />
+  </component>
+</project>

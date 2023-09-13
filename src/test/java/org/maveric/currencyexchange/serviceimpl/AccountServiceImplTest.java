@@ -14,6 +14,7 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.math.BigDecimal;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -45,14 +46,14 @@ class AccountServiceImplTest {
         customer.setId(1L);
 
         Account account = new Account();
-        account.setAccountNumber("123456");
+        account.setAmount(BigDecimal.valueOf(123456));
         account.setCustomer(customer);
 
         when(customerRepo.findById(1L)).thenReturn(Optional.of(customer));
         when(accountRepo.save(any(Account.class))).thenReturn(account);
 
         AccountRequest accountRequest = new AccountRequest();
-        accountRequest.setAccountNumber(account.getAccountNumber());
+        accountRequest.setAmount(account.getAmount());
 
         AccountResponse result = accountService.updateAccountUtil(1L, "123456", accountRequest);
 
