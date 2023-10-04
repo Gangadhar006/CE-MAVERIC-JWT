@@ -76,18 +76,22 @@
 </div> -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
+
 <body>
- 
-    <div class="container">
-        <div style="color:#fff;text-align: center;font-weight:bolder;padding: 15px;background-color: #0005;"><h2>Order Watchlist</h2></div>
-        <div class="tab-content" id="myTabsContent">
-            
-            <!-- <div class="tab-pane fade  show active" id="watchlist" role="tabpanel" aria-labelledby="watchlist-tab">
+
+  <div class="container">
+    <div style="color:#fff;text-align: center;font-weight:bolder;padding: 15px;background-color: #0005;">
+      <h2>Order Watchlist</h2>
+    </div>
+    <div class="tab-content" id="myTabsContent">
+
+      <!-- <div class="tab-pane fade  show active" id="watchlist" role="tabpanel" aria-labelledby="watchlist-tab">
                 
                 <div *ngFor="let transaction of transactions?.reverse()" class="p-3 m-3 border alert alert-primary" style="width:max-content;">
                   <p>From: {{ transaction.srcAccount }}</p>
@@ -97,63 +101,68 @@
                  
                   </div>
             </div> -->
-            <section class="table_body">
-              <table>
-                  <thead>
-                      <tr>
-                        <th>Currency Pair</th>
-                          <th>Source account</th>
-                          <th>Destination account</th>
-                          <th>Amount</th>
-                          
-                          <th>Rate</th>
-                          <th>Total value</th>
-                          <th>Time</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                      <tr *ngFor="let transaction of transactions?.reverse()">
-                        <td>{{transaction.currencyPair}}</td>
-                          <td>{{transaction.srcAccount}}</td> 
-                          <td>{{transaction.destAccount}}</td>
-                          <td>{{transaction.amount}}</td>
-                          
-                          <td>{{transaction.rate}}</td>
-                          <td>{{transaction.totalValue}}</td>
-                          <td>{{ transaction.time ? (transaction.time | customDate) : 'N/A' }}</td>
-                    </tr>
-                  </tbody>
-              </table>
-              
-          </section>
-          <div class="justify-content-center d-flex align-items-center"><button class="btn btn-primary" routerLink="/placeOrder">Place Order</button></div>
-          <div style="display: flex; justify-content: center; align-items: center; padding: 20px;">
-            <nav aria-label="Page navigation">
-                <ul class="pagination">
-                    <li class="page-item" [class.disabled]="p === 1" style="width:20px;text-align: center;">
-                        <a class="page-link" (click)="changePage(p - 1)" aria-label="Previous"
-                            style="background-color:darkcyan;color:azure">
-                            <span aria-hidden="true" style="width:20px">&laquo;</span>
-                        </a>
-                    </li>
-                    <li class="page-item" *ngFor="let pageNum of pages" [class.active]="p === pageNum"
-                        style="width:30px;text-align: center;">
-                        <a class="page-link" (click)="changePage(pageNum)"
-                            style="background-color:#fff;color:black;z-index: 0;">{{ pageNum }}</a>
-                    </li>
-                    <li class="page-item" [class.disabled]="p === pages.length" style="width:20px;text-align: center;">
-                        <a class="page-link" (click)="changePage(p + 1)" aria-label="Next"
-                            style="background-color:darkcyan;color:azure">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>   
-        </div>
-        </div>
-        
+      <section class="table_body">
+        <table>
+          <thead>
+            <tr *ngIf="transactions.length > 0; else noRecords">
+              <th>Currency Pair</th>
+              <th>Source account</th>
+              <th>Destination account</th>
+              <th>Amount</th>
 
-    </div> 
-  
+              <th>Rate</th>
+              <th>Total value</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let transaction of transactions?.reverse()">
+                <td>{{transaction.currencyPair}}</td>
+                <td>{{transaction.srcAccount}}</td>
+                <td>{{transaction.destAccount}}</td>
+                <td>{{transaction.amount}}</td>
+
+                <td>{{transaction.rate}}</td>
+                <td>{{transaction.totalValue}}</td>
+                <td>{{ transaction.time ? (transaction.time | customDate) : 'N/A' }}</td>
+              </tr>
+          </tbody>
+        </table>
+        <ng-template #noRecords>
+          <p style="text-align: center;">No records available</p>
+        </ng-template>
+
+      </section>
+      <div class="justify-content-center d-flex align-items-center"><button class="btn btn-primary"
+          routerLink="/placeOrder">Place Order</button></div>
+      <div style="display: flex; justify-content: center; align-items: center; padding: 20px;">
+        <nav aria-label="Page navigation">
+          <ul class="pagination">
+            <li class="page-item" [class.disabled]="p === 1" style="width:20px;text-align: center;">
+              <a class="page-link" (click)="changePage(p - 1)" aria-label="Previous"
+                style="background-color:darkcyan;color:azure">
+                <span aria-hidden="true" style="width:20px">&laquo;</span>
+              </a>
+            </li>
+            <li class="page-item" *ngFor="let pageNum of pages" [class.active]="p === pageNum"
+              style="width:30px;text-align: center;">
+              <a class="page-link" (click)="changePage(pageNum)"
+                style="background-color:#fff;color:black;z-index: 0;">{{ pageNum }}</a>
+            </li>
+            <li class="page-item" [class.disabled]="p === pages.length" style="width:20px;text-align: center;">
+              <a class="page-link" (click)="changePage(p + 1)" aria-label="Next"
+                style="background-color:darkcyan;color:azure">
+                <span aria-hidden="true">&raquo;</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+
+  </div>
+
 </body>
+
 </html>

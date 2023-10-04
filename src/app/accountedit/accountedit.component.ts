@@ -6,6 +6,7 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { AccountsService } from '../accounts.service';
 import { ActivatedRoute } from '@angular/router';
 import { CustomerService } from '../customer.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-accountedit',
@@ -41,8 +42,18 @@ onClose() {
 
 
 submitForm() {
+  const custId=this.accountService.custId
+  const accNum=localStorage.getItem('accNum')
   if (this.createForm.valid) {
-    console.log(this.createForm.value);
+    this.accountService.updateAccount(custId,accNum,this.createForm.value).subscribe(data=>{
+      console.log(data);
+      this.dialogRef.close();
+      Swal.fire('Hurray', 'Account has been updated.', 'success');
+      
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+    })
   
   } else {
     this.markFormFieldsAsTouched(this.createForm);
@@ -70,7 +81,6 @@ getAccounts(){
     this.accountObject=x.find((z:any)=>z.id==this.accountService.edit);
     this.createForm.patchValue({amount:this.accountObject.amount});
     this.createForm.patchValue({currency:this.accountObject.currency});
-    
   })
   console.log(this.accountObject);
   

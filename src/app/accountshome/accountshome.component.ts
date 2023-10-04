@@ -67,6 +67,7 @@ export class AccountshomeComponent {
   onEdit(id: number, accNo: string) {
     this.accountsService.custId = id
     this.accountsService.edit = accNo
+    localStorage.setItem('accNum',accNo)
     this.dialog.open(AccounteditComponent, {
       width: '500px',
       height: 'max-content'
