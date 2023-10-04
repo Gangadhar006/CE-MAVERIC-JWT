@@ -1,0 +1,84 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    height: 90vh; /* Set the minimum height to 100% of the viewport height */
+    display: flex;
+    justify-content: top;
+    align-items: center;
+    background-color: #ECF0F1;
+    margin: 0; 
+    width:100vw;
+    
+  }
+
+.container{
+    width: 80vw;
+    height: max-content;
+    position: relative;
+    background-color: #fff8;
+    justify-content: center;
+    margin:50px auto;
+    border-radius: 2rem;
+    overflow: hidden; 
+    
+}
+
+button {
+    position: relative;
+    background-color:darkcyan;
+    color: #fff;
+    padding: 10px 20px;
+    width:200px;
+    height:50px;
+    border: none;
+    border-radius: 5rem;
+    border: 1.95px solid black;
+    cursor: pointer;
+    overflow: hidden;
+    transition: width 0.3s ease-in-out;
+  }
+
+
+  
+table {
+    width: 100%;
+  }
+  
+  .table_body {
+    width: 95%;
+    max-height: 50vh; 
+    background-color: #fffa;
+    margin: 0.8rem auto;
+    border-radius: 0.6rem;
+    overflow: auto;
+  }
+  
+  .table_body::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+  
+  .table_body::-webkit-scrollbar-thumb {
+    border-radius: 0.5rem;
+    background-color: #0005;
+    visibility: hidden;
+  }
+  
+  .table_body:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+  }
+  
+  thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #d5d1defe;
+  }
+
+  thead td {
+    border:1px black;
+  }

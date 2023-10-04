@@ -1,0 +1,37 @@
+[
+    {
+                
+                "custId":1,
+                "firstName":"Chris",
+                "lastName":"Kevin",
+                "dob":"25-)5-1999",
+                "age":"24",
+                "email":"pchriskevin25@gmail.commmmm",
+                "gender":"Male",
+                "contact":"8012344555"
+    },
+
+    {
+                
+        "custId":2,
+        "firstName":"Phris",
+        "lastName":"Kevin",
+        "dob":"25-)5-1999",
+        "age":"24",
+        "email":"pchriskevin25@gmail.commmmm",
+        "gender":"Male",
+        "contact":"8012344555"
+},
+
+{
+                
+    "custId":3,
+    "firstName":"Thris",
+    "lastName":"Kevin",
+    "dob":"25-)5-1999",
+    "age":"24",
+    "email":"pchriskevin25@gmail.commmmm",
+    "gender":"Male",
+    "contact":"8012344555"
+}
+]

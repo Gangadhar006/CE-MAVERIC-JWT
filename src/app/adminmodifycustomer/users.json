@@ -1,0 +1,82 @@
+[
+    {
+                
+                "custId":10000000,
+                "firstName":"Chris",
+                "lastName":"Kevin",
+                "dob":"25-05-1999",
+                "age":"24",
+                "email":"pchriskevin25@gmail.commmmm",
+                "gender":"Male",
+                "contact":"8012344555"
+    },
+
+    {
+                
+        "custId":20000000,
+        "firstName":"Phris",
+        "lastName":"Kevin",
+        "dob":"25-05-1999",
+        "age":"24",
+        "email":"pchriskevin25@gmail.commmmm",
+        "gender":"Male",
+        "contact":"8012344555"
+},
+
+{
+                
+    "custId":30000000,
+    "firstName":"Thris",
+    "lastName":"Kevin",
+    "dob":"25-05-1999",
+    "age":"24",
+    "email":"pchriskevin25@gmail.commmmm",
+    "gender":"Male",
+    "contact":"8012344555"
+},
+{
+                
+    "custId":30000000,
+    "firstName":"Thris",
+    "lastName":"Kevin",
+    "dob":"25-05-1999",
+    "age":"24",
+    "email":"pchriskevin25@gmail.commmmm",
+    "gender":"Male",
+    "contact":"8012344555"
+},
+{
+                
+    "custId":30000000,
+    "firstName":"Thris",
+    "lastName":"Kevin",
+    "dob":"25-05-1999",
+    "age":"24",
+    "email":"pchriskevin25@gmail.commmmm",
+    "gender":"Male",
+    "contact":"8012344555"
+},
+{
+                
+    "custId":30000000,
+    "firstName":"Thris",
+    "lastName":"Kevin",
+    "dob":"25-05-1999",
+    "age":"24",
+    "email":"pchriskevin25@gmail.commmmm",
+    "gender":"Male",
+    "contact":"8012344555"
+},
+{
+                
+    "custId":30000000,
+    "firstName":"Thris",
+    "lastName":"Kevin",
+    "dob":"25-05-1999",
+    "age":"24",
+    "email":"pchriskevin25@gmail.commmmm",
+    "gender":"Male",
+    "contact":"8012344555"
+    
+    }
+]

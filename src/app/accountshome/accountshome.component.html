@@ -1,0 +1,105 @@
+<html>
+
+<head>
+  <title>Home page</title>
+  <link rel="stylesheet" href="accountshome.component.css">
+  <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://kit.fontawesome.com/9602d6aa65.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <main>
+    <section class="customer_info_header" style="background-color: #0005;">
+      <h2 style="color:#fff;">Customer Info</h2>
+    </section>
+    <section class="customer_info" >
+
+      <table>
+        <thead>
+          <tr>
+            <th>Customer ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Date of Birth</th>
+            <th>Age</th>
+            <th>Email ID</th>
+            <th>Gender</th>
+            <th>Contact No</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{customers.id}}</td>
+            <td>{{customers.firstName}}</td>
+            <td>{{customers.lastName}}</td>
+            <td>{{customers.dob}}</td>
+            <td>{{customers.age}}</td>
+            <td>{{customers.email}}</td>
+            <td>{{customers.gender}}</td>
+            <td>{{customers.phone}}</td>
+
+          </tr>
+        </tbody>
+
+
+      </table>
+      <!-- <div class="d-flex justify-content-center align-items-center">
+            <label id="custId">Customer ID:</label><h6 style="font-weight: bolder;">{{customers.id}}</h6>
+            <label id="custId">Customer ID:</label><h6 style="font-weight: bolder;">{{customers.id}}</h6>
+          </div>   -->
+    </section><br>
+    <section class="table_header" style="background-color: #0005;">
+      <h2 style="color:#fff;">Accounts Linked</h2>
+    </section>
+    <section class="table_body">
+      <div *ngIf="accounts.length > 0; else noRecords">
+        <table>
+          <thead>
+            <tr>
+
+              <th>Account Number</th>
+              <th>Amount</th>
+              <th>Currency</th>
+              <th>Actions</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngIf="accounts.length > 0; else noRecords">
+              <tr *ngFor="let account of accounts">
+                <td>{{account.accountNumber}}</td>
+                <td>{{account.amount}}</td>
+                <td>{{account.currency}}</td>
+                <td style="text-align: left;justify-content: center;display: flex;">
+                  <div class="fa-solid fa-pen-to-square" style="color:blue;width:30%;cursor: pointer;" mat-button
+                    (click)="onEdit(customers.id,account.accountNumber)"> </div>
+                  <div class="fa-solid fa-trash-can" id="delete" style="color: red;width:70%;cursor: pointer;"
+                    (click)="onDelete(customers.id,account.accountNumber)"></div><br>
+                </td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+      <ng-template #noRecords>
+        <p style="text-align: center;">No records available</p>
+      </ng-template>
+
+    </section>
+    <div style="display: flex; justify-content: center; align-items: center; padding: 20px;">
+
+    </div>
+    <div style="display: flex;justify-content:right;align-items: right;padding-right: 90px;">
+      <button class="expand-button btn btn-primary" mat-button (click)="onCreate()">
+        <span class="initial fa-solid fa-file-circle-plus fa-2x"></span>
+        <span class="hover-text" style=" padding:10px;font-size: small">Link Account</span>
+      </button>
+    </div>
+  </main>
+</body>
+
+</html>

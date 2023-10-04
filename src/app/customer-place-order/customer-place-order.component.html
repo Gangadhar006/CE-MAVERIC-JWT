@@ -1,0 +1,99 @@
+<!-- <form #data="ngForm" name="myForm" #myForm="ngForm" (ngSubmit)="submit(data)" class="p-4"> -->
+  <!-- <form [formGroup]="createForm" (ngSubmit)="submitForm()">
+  <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="mb-3">
+            <label for="from" class="form-label">Debit from</label>
+            <select name="from" ngModel class="form-select"
+            [(ngModel)]="transaction.srcAccount">
+                
+                <option *ngFor="let account of customerAccounts" value={{account.currency}}> a/c : {{account.accountNumber}}</option>
+                
+            </select>
+          </div>
+        
+  <div class="mb-4" *ngIf="availableBalance !== undefined">
+    <label class="text-gray-600">Available Balance:</label>
+    <span class="text-lg font-semibold">{{availableBalance}}</span>
+  </div>
+
+          <div class="mb-3">
+            <label for="to" class="form-label">Credit to</label>
+            <select name="to" ngModel class="form-select"
+            [(ngModel)]="transaction.destAccount">
+               
+                <option *ngFor="let acc of customerAccounts" value={{acc.currency}}> a/c : {{acc.accountNumber}}</option>
+
+              </select>
+          </div>
+  
+          <div class="mb-3">
+            <label for="amount" class="form-label">Amount</label>
+            <input type="text" class="form-control" name="amount" ngModel
+            [(ngModel)]="transaction.amount">
+          </div>
+
+          <div class="d-flex justify-content-between mt-4">
+            <button type="button" class="btn btn-danger w-48 rounded-pill">Cancel</button>
+            <button type="submit" class="btn btn-primary w-48 rounded-pill" (click)="placeOrder()">Place Order</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form> -->
+  <div class="body">
+  <form [formGroup]="createForm" (ngSubmit)="submitForm()">
+   
+  <div class="container" class="container" style="padding: 80px;">
+    <div class="card" style="background-color: #fff5;">
+      <h2 style="text-align: center;color:#fff; background-color: #0005;padding: 15px;">Place Order</h2>
+      <div class="col-md-6 mx-auto">
+        <div class="mb-3">
+          <label for="from" class="form-label">Debit from</label>
+          <select formControlName="srcAccount" placeholder="Enter the source account" class="form-select"  (change)="updateAvailableBalanceSrcAccount(createForm.get('srcAccount')?.value)"> 
+            <option *ngFor="let account of customerAccounts" [value]="account.accountNumber"> a/c : {{account.accountNumber}}</option>
+          </select>
+        </div>
+        <div class="mb-4" *ngIf="availableBalanceSrc !== null">
+          <label class="text-gray-600">Available Balance : </label>
+          <span class="text-red" style="color: red;">{{" "+ availableBalanceSrc+" "+debitCurrency }}</span>
+        </div>
+        
+        
+        <div class="mb-3">
+          <label for="to" class="form-label">Credit to</label>
+          <select formControlName="destAccount" placeholder="Enter the destination account" class="form-select"  (change)="updateAvailableBalanceDestAccount(createForm.get('destAccount')?.value)">
+            <option  *ngFor="let acc of customerAccounts" [value]="acc.accountNumber"> a/c : {{acc.accountNumber}}</option>
+          </select>
+          <div *ngIf="destAccount?.dirty">
+            <div *ngIf="createForm.errors?.['account']==true" class="text-danger fw-bold">Credit and debit account cannot be same</div>
+          </div>
+        </div>
+  
+        <div class="mb-4" *ngIf="availableBalanceDest !== null">
+          <label class="text-gray-600">Available Balance : </label>
+          <span class="font-red text-Red"  style="color: red;">{{" "+ availableBalanceDest+" "+creditCurrency }}</span>
+        </div>
+
+        <div class="rate-block" *ngIf="enableFetchRates">
+          <p [innerHTML]="currencyRatesMessage" style="color:green;font-weight: bold;"></p>
+        </div> 
+
+        <div class="mb-3">
+          <label for="amount" class="form-label">Amount</label>
+          <input type="text" class="form-control" formControlName="amount"  placeholder="Enter the amount">
+        </div>
+  
+        
+        <div class="d-flex justify-content-between mt-4" style="padding:20px ;">
+          <button type="button" class="btn btn-danger w-48 rounded-pill">Cancel</button>
+          <button type="submit" id="placeOrder" name="placeOrder" class="btn btn-primary w-48 rounded-pill" (click)="placeOrder()">Place Order</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</form>
+
+  </div>

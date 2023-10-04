@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+  .banner {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgb(247, 247, 247), rgba(0, 0, 0, 0.1));
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .navbar {
+    width: 85%;
+    margin: auto;
+    padding: 20px 0; /* Adjusted padding for responsiveness */
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to new line on smaller screens */
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    width: 100%; /* Make the logo width 100% for responsiveness */
+    
+    max-width: 250px; /* Limit maximum logo width */
+    cursor: pointer;
+  }
+  
+  .navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 10px 0; /* Adjust margin for responsiveness */
+    padding: 0;
+  }
+  
+  .navbar ul li {
+    margin: 0 10px; /* Adjust margin for responsiveness */
+    position: relative;
+  }
+  
+  .navbar ul li a {
+    color:midnightblue;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bolder;
+  }
+  
+  .navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: royalblue;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+  }
+  
+  .navbar ul li:hover::after {
+    width: 100%;
+  }
+  
+  .content {
+    width: 100%;
+    position: absolute;
+    color: #fff;
+    transform: translateY(100%);
+    text-align: center;
+    
+  }
+  
+  button {
+    width: 100%; /* Make the button width 100% for responsiveness */
+    max-width: 200px; /* Limit maximum button width */
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 25px;
+    margin: 10px 0; /* Adjust margin for responsiveness */
+    color:#fff;
+    background:#393f81;
+    border: 2px solid navajowhite;
+    font-weight: bolder;
+    
+  }
+  
+  
+  
+  .marquee {
+    width: 100%; /* Make marquee width 100% for responsiveness */
+    overflow: hidden;
+    box-sizing: border-box;
+    color: darkorange;
+    white-space: nowrap;
+    margin: 10px auto; /* Adjust margin for responsiveness */
+  }
+  
+  .marquee a {
+    display: inline-block;
+    padding-left: 100%;
+    will-change: auto;
+    animation: marquee 8s linear infinite;
+  }
+  
+  .marquee a:hover {
+    animation-play-state: paused;
+  }
+  
+  /* Make it move */
+  
+  @keyframes marquee {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(-100%, 0);
+    }
+  }
+  
+  /* Add media queries for responsiveness */
+  
+  @media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar ul li {
+        margin: 10px 0;
+    }
+    .marquee {
+        margin: 10px auto; /* Adjust margin for responsiveness */
+    }
+
+    * {
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      
+      /* Float four columns side by side */
+      .column {
+        float: left;
+        width: 25%;
+        padding: 0 10px;
+      }
+      
+      /* Remove extra left and right margins, due to padding in columns */
+      .row {margin: 0 -5px;}
+      
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+      
+      /* Style the counter cards */
+      .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+        padding: 16px;
+        text-align: center;
+        background-color: #f1f1f1;
+      }
+      
+      /* Responsive columns - one column layout (vertical) on small screens */
+      @media screen and (max-width: 600px) {
+        .column {
+          width: 100%;
+          display: block;
+          margin-bottom: 20px;
+        }
+      }
+  }
+  

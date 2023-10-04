@@ -1,0 +1,29 @@
+.alert-box {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50; /* Green background color */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+    z-index: 1000; /* Ensure it appears on top of other elements */
+    text-align: center;
+  }
+  
+  .alert-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .icon {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  
+  p {
+    font-size: 18px;
+    margin: 0;
+  }
+  

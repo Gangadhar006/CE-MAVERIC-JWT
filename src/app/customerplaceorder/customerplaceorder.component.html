@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <title>Customer order page</title>
+        <link rel="stylesheet" href="customerplaceorder.component.css">
+    </head>
+    <body>
+        <div class="banner" >
+            <div class="navbar">
+                 <img src="assets/metroo.png" class="logo">
+                <ul>
+                   
+                    <li><a href="#" routerLink="/home">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#" routerLink="/login">Logout</a></li>
+                    
+                </ul>
+                
+                
+            </div>
+
+            <br>
+            <div class="content">
+            <div style="width:40%;display:flex" >
+                <!-- <label for="debitAmount" style="color:#fff">Debit Amount</label>  
+                <input type="debitAmount" id="debitAmount" class="form-control" placeholder="Enter the debit amount"> -->
+                <div style="width:20px;"></div>
+                <label for="debitCurrency" style="color:#fff">Select Account</label>  
+                <select name="debitCurrency" id="debitCurrency" placeholder="Select the country account">
+                    <option value="1">Indian Account</option>
+                    <option value="2">US Account</option>
+                    <option value="3">Europe Account</option>
+                    <option value="4">Japanese Account</option>
+                  </select>
+            </div>
+            <br><br>
+            <div style="width:40%;display:flex" >
+                <label for="creditAmount" style="color:#fff">Credit Amount</label>  
+                <input type="creditAmount" id="creditAmount" class="form-control" placeholder="Enter the credit amount">
+                <!-- <div style="width:200px"></div>
+                <label for="creditCurrency" style="color:#fff">Credit Currency</label>  
+                <select name="creditCurrency" id="creditCurrency">
+                    <option value="1">INR</option>
+                    <option value="2">USD</option>
+                    <option value="3">EUR</option>
+                    <option value="4">JPY</option>
+                  </select>-->
+            </div> 
+            </div>
+            
+        </div>
+    </body>
+</html>

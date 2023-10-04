@@ -1,0 +1,90 @@
+<html>
+<head>
+    <title>Home page</title>
+    <link rel="stylesheet" href="adminmodifycustomer.component.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/9602d6aa65.js" crossorigin="anonymous"></script>
+</head>
+<body>
+        <main>
+            <section class="table_header">
+                <h2 style="color:#fff;">Customer List</h2> 
+                <div style="display: flex;justify-content:right;align-items: right;padding-right: 90px;">
+                    <button class="expand-button btn btn-primary"  mat-button (click)="onCreate()" >
+                       <span class="initial fa-solid fa-user-plus fa-2x" style="font-weight: bolder;font-size: larger;"></span>
+                       <span class="hover-text" style="font-size: large;">Add Customer</span>
+                     </button>  </div> 
+            </section>
+            <section class="table_body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Customer ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Date of Birth</th>
+                            <th>Age</th>
+                            <th>Email ID</th>
+                            <th>Gender</th>
+                            <th>Contact No</th>
+                            <th>Actions</th>
+                            <th>Accounts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- "firstName": string,
+                        "lastName": string,
+                        "dob":Date,
+                        "age": number,
+                        "email": string,
+                        "gender": string,
+                        "phone": string -->
+                        <tr *ngFor="let user of pagedUsers; let i = index">
+                            <td>{{user.id}}</td> 
+                            <td>{{user.firstName}}</td>
+                            <td>{{user.lastName}}</td>
+                            <td>{{user.dob}}</td>
+                            <td>{{user.age}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.gender}}</td>
+                            <td>{{user.phone}}</td>
+                            <td style="text-align: center;">
+                                 <div class="fa-solid fa-pen-to-square"  style="color:blue;width:50%;cursor: pointer;" (click)="onEdit(user.id)">  </div> 
+                                <div class="fa-solid fa-trash-can" id="delete" style="color: red;width:50%;cursor: pointer;" (click)="onDelete(user.id)"   ></div><br>         
+                            </td>
+                            <td style="text-align: center;">
+                                <div class="fa-solid fa-users" style="color:green;cursor: pointer;font-size:larger;" (click)="onAccountsClick(user.id)">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            <div style="display: flex; justify-content: center; align-items: center; padding: 20px;">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li class="page-item" [class.disabled]="p === 1" style="width:20px;text-align: center;">
+                            <a class="page-link" (click)="changePage(p - 1)" aria-label="Previous"
+                                style="background-color:darkcyan;color:azure">
+                                <span aria-hidden="true" style="width:20px">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item" *ngFor="let pageNum of pages" [class.active]="p === pageNum"
+                            style="width:30px;text-align: center;">
+                            <a class="page-link" (click)="changePage(pageNum)"
+                                style="background-color:#fff;color:black;z-index: 0;">{{ pageNum }}</a>
+                        </li>
+                        <li class="page-item" [class.disabled]="p === pages.length" style="width:20px;text-align: center;">
+                            <a class="page-link" (click)="changePage(p + 1)" aria-label="Next"
+                                style="background-color:darkcyan;color:azure">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>   
+            </div>
+            
+        </main>
+</body>
+</html>

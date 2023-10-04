@@ -1,0 +1,124 @@
+ .navbar {
+
+    background-color:darkcyan;
+    width:100vw;
+    height: 10%;
+    box-shadow: 5px 3px 8px rgba(0, 0, 0, 25%);
+    
+  }
+  
+  .logo {
+    display: flex;
+    justify-content: center; /* Horizontal alignment */
+    align-items: center; /* Vertical alignment */
+    height:40px;
+    margin-left: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 10px 0; 
+    
+  }
+  
+  .navbar ul li {
+    margin: 0 10px;
+    position: relative;
+  }
+  
+  .navbar ul li a {
+    color:#fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bolder;
+    padding:7px 13px;
+    border-radius: 3px;
+  }
+
+  a.active,a:hover{
+    background: #0003;
+    transition: 0.5s;
+  }
+  
+
+  .navbar ul li:hover::after {
+    width: 100%;
+  } 
+
+  button {
+    width: 100%; 
+    max-width: 50px; 
+    padding: 1px 0;
+    text-align: center;
+    border-radius: 25px;
+    max-height: 50px;
+    padding: 8px;
+    
+    color:#000;
+    background:#ECF0F1;
+    border: 1.5px solid black;
+    font-weight: bolder;
+    
+    
+  }
+/* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+nav{
+    background: darkcyan;
+    height: 10%;
+    width:100vw;
+    box-shadow: 5px 3px 8px rgba(0, 0, 0, 95%);
+}
+
+img {
+    width: 100%; 
+    padding-left: 10px;
+    max-width: 250px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 80px;
+}
+
+nav ul {
+    
+    display: flex;
+    list-style: none;
+    margin: 10px 0; 
+    
+  }
+
+  nav ul li {
+    margin: 0 10px;
+    position: relative;
+  }
+  
+  nav ul li a {
+    color:#fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bolder;
+  }
+  
+  nav ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background:pink;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+  }
+  
+  nav ul li:hover::after {
+    width: 100%;
+  } */

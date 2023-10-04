@@ -1,0 +1,26 @@
+
+  .banner {
+    height: max-content;
+    width: 100%;
+   background-color:#ECF0F1 ;
+    background-size: cover;
+    background-position: center;
+  }
+
+  
+  button {
+    width: 100%; 
+    max-width: 100px; 
+    padding: 10px 0;
+    text-align: center;
+    border-radius: 25px;
+    margin: 10px 0; 
+    color:#fff;
+    background:darkcyan;
+    border: 1.5px solid black;
+    font-weight: bolder; 
+  }
+
+  input,select{
+    width: 250px;
+  }

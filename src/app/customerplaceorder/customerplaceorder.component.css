@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+  
+  .banner {
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .navbar {
+    width: 85%;
+    margin: auto;
+    padding: 20px 0; /* Adjusted padding for responsiveness */
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to new line on smaller screens */
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    width: 100%; /* Make the logo width 100% for responsiveness */
+    
+    max-width: 250px; /* Limit maximum logo width */
+    cursor: pointer;
+  }
+  
+  .navbar ul {
+    display: flex;
+    list-style: none;
+    margin: 10px 0; /* Adjust margin for responsiveness */
+    padding: 0;
+  }
+  
+  .navbar ul li {
+    margin: 0 10px; /* Adjust margin for responsiveness */
+    position: relative;
+  }
+  
+  .navbar ul li a {
+    color: ghostwhite;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  
+  .navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: royalblue;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+  }
+  
+  .navbar ul li:hover::after {
+    width: 100%;
+  }
+  
+  input {
+    width: 100%; /* Make the button width 100% for responsiveness */
+    max-width: 200px; /* Limit maximum button width */
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 25px;
+    margin: 10px 0; /* Adjust margin for responsiveness */
+    color:#fff;
+    border: 2px solid #393f81;
+    
+    
+  }
+
+  select{
+    width: 100%; /* Make the button width 100% for responsiveness */
+    max-width: 90px; /* Limit maximum button width */
+    padding: 15px 0;
+    text-align: center;
+    border-radius: 25px;
+    margin: 10px 0; /* Adjust margin for responsiveness */
+    border: 2px solid #393f81;
+    
+    
+  }

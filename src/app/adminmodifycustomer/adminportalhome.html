@@ -1,0 +1,87 @@
+<h1 class="my-4 text-center text-primary fw-bold">Welcome to Metrobank</h1>
+<!-- <div class="text-center"><button type="button" routerLink="/add-customer" (click)="addCustomer()" class="btn btn-outline-primary rounded-pill shadow text">Add Customer</button></div> -->
+<div class="table-responsive-sm mt-3">
+  <table class="table container shadow border-none m-auto rounded-table">
+    <thead class="table-primary text-center">
+      <tr>
+        <th scope="col">
+          <p></p>Username
+          <p></p>
+        </th>
+        <th scope="col">
+          <p></p>E-mail
+          <p></p>
+        </th>
+        <th scope="col">
+          <p></p>Gender
+          <p></p>
+        </th>
+        <th scope="col">
+          <p></p>Phoneno
+          <p></p>
+        </th>
+        <th scope="col">
+          <p></p>Accounts
+          <p></p>
+        </th>
+        <th scope="col">
+          <p></p>
+          <p></p>
+        </th>
+        <th scope="col">
+          <p></p>
+          <p></p>
+        </th>
+      </tr>
+    </thead>
+    
+    <tbody class="text-center">
+      
+      <!-- <tr class="table-light" *ngFor="let customer of customersD"> -->
+        <tr class="table-light">
+        <td >
+         <p></p>
+          {{1}}
+          
+        </td>
+        <td>
+          <p></p>
+         {{2}}
+          
+        </td>
+        <td>
+          <p></p>
+          {{3}}
+          
+        </td>
+        <td>
+          <p></p>
+          {{4}}
+        </td>
+        <td>
+          
+          <!-- <a (click)="accounts(customer.customerId)" routerLink="/accounts/{{customer.customerId}}"><button class="btn btn-success rounded-circle"> -->
+            <a routerLink="/accounts/{{5}}"><button class="btn btn-success rounded-circle">
+            <i class="bi bi-bank"></i>
+          </button></a>
+        </td>
+        <td> <!-- <a routerLink="/edit-customer/{{customer.customerId}}" (click)="editCustomer()"><button class="btn btn-secondary rounded-circle"> -->
+            <a routerLink="/edit-customer/{{6}}"><button class="btn btn-secondary rounded-circle">
+            <i class="bi bi-pencil"></i>
+            </button>
+          </a></td>
+          <td><!--<a class="text-danger"  (click)="deleteCustomer(customer.customerId)"><button class="btn btn-danger rounded-pill"> -->
+            <a class="text-danger" ><button class="btn btn-danger rounded-pill">
+            <i class="bi bi-trash"></i>
+            </button></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <div class=" row  justify-content-center mt-3" *ngIf="loading"> -->
+    <div class=" row  justify-content-center mt-3">
+    <div class="spinner-border text-primary col-1" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+</div>

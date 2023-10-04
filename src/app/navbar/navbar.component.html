@@ -1,0 +1,43 @@
+<div class="navbar">
+    <!-- <button *ngIf="_customerService.isLoggedIn()" (click)="goBack()" class="back-button fa-solid fa-chevron-left"></button> -->
+    <img src="assets/metroo.png" style="text-align: center;" class="logo">
+    <!-- <ul>
+      <li><a href="#" *ngIf="_customerService.isLoggedIn()" routerLink="/modifycustomer">Home</a></li>
+      <li><a href="#" *ngIf="_customerService.isLoggedIn() && _customerService.customerLoggedIn" routerLink="/customerHome/${custId}">Home</a></li>
+      <li><a href="#" *ngIf="_customerService.isLoggedIn()" (click)="logout()">Logout</a></li>
+      <li><a href="#" *ngIf="!_customerService.isLoggedIn()" routerLink="">Login</a></li>
+    </ul> -->
+
+
+
+    <ul>
+        <li><a href="#" *ngIf="_customerService.isLoggedIn() && !_customerService.customerLoggedIn" routerLink="/modifycustomer">Home</a></li>
+        <li><a href="#" *ngIf="_customerService.isLoggedIn() && _customerService.customerLoggedIn" routerLink="/customerHome/${custId}">Home</a></li>
+        <li><a href="#" *ngIf="_customerService.isLoggedIn()" (click)="logout()">Logout</a></li>
+        <li><a href="#" *ngIf="!_customerService.isLoggedIn()" routerLink="">Login</a></li>
+      </ul>
+      
+  </div>
+
+ <!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <img src="assets/metroo.png" class="logo">
+        <ul>
+
+            <li><a href="#" routerLink="/modifycustomer">All Customers</a></li>
+            <li><a href="#" >Add Customer</a></li>
+            <li><a href="#" >About</a></li>
+            <li><a href="#" >Logout</a></li>
+            <li><a class="fa-solid fa-power-off fa-2x" id="logout" routerLink="/login"></a></li>
+            
+        </ul>
+    </nav>
+</body>
+</html> -->
