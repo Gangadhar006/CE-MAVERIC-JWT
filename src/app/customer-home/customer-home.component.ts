@@ -56,9 +56,6 @@ export class CustomerHomeComponent {
     // this.customerThings.getTransaction(this.cutomerId).subscribe((t)=>this.transactions = t);
     this.getAllAccountsForCustomer();
     this.getAllOrders();
-
-
-
   }
 
   // onSubmitTransaction(transaction : Transaction){
